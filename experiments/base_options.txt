@@ -1,0 +1,28 @@
+finestScale 4
+nScales 1
+scaleStep 1
+uniformFinest 0
+
+generateData 0
+computePCA 0
+train 0
+test 1
+
+nDimOut 4
+nTrees 10
+treeDepth 50
+nDimTrials 100
+nThreshTrials 5
+bagProb 0.5
+minExsAtNode 8
+nTrainingSamples 50000
+
+featureIntensity 1
+featureGradientXY 1
+featureGradientOrientation 0
+featureGradientMagnitude 0
+featureDistanceTransform 0
+featurePolarAngle 0
+
+unaryCost 5
+unaryCostScaling 0.5

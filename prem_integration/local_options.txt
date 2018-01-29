@@ -1,0 +1,3 @@
+target_path C:\Work\research\shadow_removal\experiments
+test_dir %(target_path)s\test_images_real\perturbed_masks
+random_training_subsample 1

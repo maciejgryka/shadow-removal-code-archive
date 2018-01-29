@@ -1,0 +1,12 @@
+Multivariate Regression Random Forest
+maciej.gryka@gmail.com
+
+** Feel free to use this code for any research/personal use. Please give me a
+shout for anything else. **
+
+This code implements Random Forest for multivaraite regression. See main.cpp for
+example usage.
+The results can be plotted using included python script (you will need to put it
+next to output files or modify the paths).
+
+The Eigen library is required: http://eigen.tuxfamily.org/

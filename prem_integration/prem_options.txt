@@ -1,0 +1,115 @@
+///////////////////////////////////////
+// common (training + testing) options
+///////////////////////////////////////
+n_scales 1
+scale_step 1
+finest_scale 4
+feature_intensity 1
+feature_gradient_xy 1
+feature_gradient_orientation 0
+feature_gradient_magnitude 0
+feature_distance_transform 1
+feature_polar_angle 0
+feature_gmatte 1
+align_rot 1
+align_trans 3
+
+////////////
+// training
+////////////
+n_dim_out 4
+n_trees 25
+tree_depth 50
+fraction_dim_trials 0.1
+n_thresh_trials 5
+bag_prob 0.5
+min_sample_count 8
+n_training_samples 1000
+
+n_training_images 2
+// n_training_images 50
+// n_training_images 750
+// n_training_images 1861
+// n_training_images 3588
+// n_training_images 7813
+// n_training_images 10542
+
+n_training_images_auto 200
+
+///////////
+// testing
+///////////
+uniform_finest 0
+unary_cost 5
+unary_cost_scaling 0.2
+
+relationship_weight_peer 1.0
+relationship_weight_parent 1.0
+pairwise_weight_alpha 0.5
+pairwise_weight_beta 1.0
+
+keep_top_n_labels 200
+
+
+///////////////////
+// general options
+///////////////////
+generate_data 1
+compute_pca 1
+train 0
+auto_train 0
+test 1
+
+image_list_name image_list
+
+local_options_file local_options.txt
+
+/////////////////////
+// dependent options
+/////////////////////
+
+training_dir %(target_path)s\training_images
+output_dir %(target_path)s\output
+prem_exec %(target_path)s\prem\PenumbraRemoval.exe
+mask_exec %(target_path)s\prem\Scribbler.bat
+overseg_exec %(target_path)s\prem\slicoverseg.exe
+inpaint_exec %(target_path)s\prem\pinpaint.bat
+
+// directory where all the data and results will be written
+size_dir %(output_dir)s\size%(n_training_images)s
+
+// trained forest data will be here
+data_dir %(size_dir)s\data
+data_file %(data_dir)s\features%%d.dat
+labels_file %(data_dir)s\labels%%d.dat
+ensemble_file %(data_dir)s\trees%%d.dat
+pca_file %(data_dir)s\pcaw%%d.xml
+
+// actual results will be here
+results_dir %(size_dir)s\results
+
+image_list_file_training %(size_dir)s\%(image_list_name)s_%(n_training_images)s.txt
+//image_list_file_test %(test_dir)s\image_list_test.txt
+image_list_file_test %(test_dir)s\image_list_perturbed_masks.txt
+// image_list_file_test %(test_dir)s\planefit_list.txt
+
+gs_postprocess 0
+gs_exec %(target_path)s\prem\GS\GS_Basic.exe
+deblock_opt_file_source %(target_path)s\deblock-opt.txt
+deblock_opt_file_target %(results_dir)s\deblock-opt.txt
+
+patchmatch_exec %(target_path)s\prem\PM_Minimal.exe
+regnn_exec %(target_path)s\prem\RegNN.exe
+
+set_bound 1
+n_iters 1
+plane_inpaint 0
+
+////////////////////////////////
+// additional debugging options
+////////////////////////////////
+
+write_guessed_mattes 0
+guess_bias 0.1
+
+grid_offset 0

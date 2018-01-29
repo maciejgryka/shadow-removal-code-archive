@@ -1,0 +1,23 @@
+appOP             = OP_FILTER
+useDefaultFNs     = false
+
+FLT.GSS.writeSol  = true
+
+FLT.type          = FT_DEBLOCK
+
+FLT.GSP.channelsType   = YUV
+FLT.GSS.fidelity_data  = 2.000000e-003
+FLT.GSS.pinchScale     = 1.000000e+000
+FLT.GSS.pinchExp       = 4.000000e+000
+FLT.GSS.maxIters       = 100
+FLT.GSS.maxLevels      = 2
+
+
+FLT.DEBLOCK.bgCurve = 500 0.000000e+000 1.000000e+000 3 0.000000e+000 0.000000e+000  1.400000e-001 6.250000e-002  1.000000e+000 1.000000e+000  
+FLT.DEBLOCK.uvMult = 20
+
+GSVS.useFlow          = true
+GSVS.fidelity_tGrad   = 1.0
+GSVS.inCoreFrameLimit = 25
+GSVS.outOfCoreIters   = 3
+

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LocalDebuggerEnvironment>PATH=$(QTDIR)\bin;C:\Qt\4.8.0\bin;C:\OpenCV2.3.1\build_32\install\bin;%PATH%</LocalDebuggerEnvironment>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LocalDebuggerEnvironment>PATH=$(QTDIR)\bin;C:\OpenCV2.3.1\build_32\install\bin;%PATH%</LocalDebuggerEnvironment>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LocalDebuggerEnvironment>PATH=$(QTDIR)\bin;C:\Qt\4.8.0\bin;C:\OpenCV2.3.1\build\install\bin;%PATH%</LocalDebuggerEnvironment>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LocalDebuggerEnvironment>PATH=$(QTDIR)\bin%3b$(PATH)</LocalDebuggerEnvironment>
+  </PropertyGroup>
+  <PropertyGroup>
+    <QTDIR>C:\Qt\4.8.0</QTDIR>
+    <DebuggerFlavor Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">WindowsLocalDebugger</DebuggerFlavor>
+    <DebuggerFlavor Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommandArguments Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Work\research\shadow_removal\experiments\2012-03-06\test_images\real32_shad.png C:\Work\research\shadow_removal\experiments\2012-03-06\test_images\real32_smask2.png</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Work\research\shadow_removal\experiments\2012-03-06\test_images\real32_shad.png C:\Work\research\shadow_removal\experiments\2012-03-06\test_images\real32_smask2.png</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Work\research\shadow_removal\experiments\2012-03-06\test_images\real32_shad.png C:\Work\research\shadow_removal\experiments\2012-03-06\test_images\real32_smask2.png</LocalDebuggerCommandArguments>
+    <DebuggerFlavor Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+</Project>

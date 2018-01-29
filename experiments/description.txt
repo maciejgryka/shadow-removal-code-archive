@@ -1,0 +1,31 @@
+# Experiment to evaluate the impact of the training set on results of the algorithm.
+# Train N_TRIALS times on each of the different sizes of the training subset, each 
+# time choosing a the subset randomly.
+# After each training evaluate on a fixed set of test images.
+#
+# Plot the results on a 2D graph:
+#   - X axis shows different sizes of training subsets
+#   - Y axis shows SSD error from ground truth for each test image in each trial
+#
+
+K = [1, 2, 5, 10, 20, 50, 100] # number of training examples
+
+N_TRIALS = 10
+
+EXPERIMENTING
+
+foreach M in K
+  foreach N in N_TRIALS
+    choose M random training samples
+    train
+    foreach I in M
+      test I and save result
+      calculate error and write to disk
+
+
+    
+PLOTTING
+
+foreach M in K
+  foreach I in M
+    plot [M, error(I,M)]
